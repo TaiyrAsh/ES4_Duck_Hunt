@@ -23,7 +23,7 @@
         }
       },
       "cells": {
-        "$specify$1204": {
+        "$specify$1252": {
           "hide_name": 1,
           "type": "$specify2",
           "parameters": {
@@ -360,7 +360,7 @@
         }
       },
       "cells": {
-        "$specify$1204": {
+        "$specify$1252": {
           "hide_name": 1,
           "type": "$specify2",
           "parameters": {
@@ -432,7 +432,7 @@
         }
       },
       "cells": {
-        "$specify$1204": {
+        "$specify$1252": {
           "hide_name": 1,
           "type": "$specify2",
           "parameters": {
@@ -2879,9 +2879,8 @@
     },
     "SB_DFFE": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "abc9_flop": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
+        "blackbox": "00000000000000000000000000000001",
         "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_sim.v:303.1-347.10"
       },
       "ports": {
@@ -10251,9 +10250,9 @@
           },
           "connections": {
             "I0": [ "0" ],
-            "I1": [ 6 ],
-            "I2": [ 7 ],
-            "I3": [ 8 ],
+            "I1": [ 7 ],
+            "I2": [ 8 ],
+            "I3": [ 9 ],
             "O": [ 5 ]
           }
         },
@@ -10272,9 +10271,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 9 ],
-            "CO": [ 7 ],
-            "I0": [ 10 ],
+            "CI": [ 10 ],
+            "CO": [ 8 ],
+            "I0": [ 11 ],
             "I1": [ "1" ]
           }
         },
@@ -10293,9 +10292,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 11 ],
-            "CO": [ 9 ],
-            "I0": [ 12 ],
+            "CI": [ 12 ],
+            "CO": [ 10 ],
+            "I0": [ 13 ],
             "I1": [ "0" ]
           }
         },
@@ -10314,9 +10313,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 13 ],
-            "CO": [ 11 ],
-            "I0": [ 14 ],
+            "CI": [ 14 ],
+            "CO": [ 12 ],
+            "I0": [ 15 ],
             "I1": [ "0" ]
           }
         },
@@ -10335,9 +10334,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 15 ],
-            "CO": [ 13 ],
-            "I0": [ 16 ],
+            "CI": [ 16 ],
+            "CO": [ 14 ],
+            "I0": [ 17 ],
             "I1": [ "0" ]
           }
         },
@@ -10347,7 +10346,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "pattern_gen.sv:67.13-67.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+            "src": "pattern_gen.sv:71.13-71.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
           },
           "port_directions": {
             "CI": "input",
@@ -10356,9 +10355,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 17 ],
-            "CO": [ 8 ],
-            "I0": [ 18 ],
+            "CI": [ 18 ],
+            "CO": [ 9 ],
+            "I0": [ 19 ],
             "I1": [ "0" ]
           }
         },
@@ -10368,7 +10367,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "pattern_gen.sv:67.13-67.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+            "src": "pattern_gen.sv:71.13-71.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
           },
           "port_directions": {
             "CI": "input",
@@ -10377,9 +10376,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 19 ],
-            "CO": [ 17 ],
-            "I0": [ 20 ],
+            "CI": [ 20 ],
+            "CO": [ 18 ],
+            "I0": [ 21 ],
             "I1": [ "1" ]
           }
         },
@@ -10403,8 +10402,8 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 21 ],
-            "I3": [ 22 ],
+            "I2": [ 22 ],
+            "I3": [ 23 ],
             "O": [ 3 ]
           }
         },
@@ -10423,9 +10422,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 23 ],
-            "CO": [ 21 ],
-            "I0": [ 18 ],
+            "CI": [ 24 ],
+            "CO": [ 22 ],
+            "I0": [ 19 ],
             "I1": [ "0" ]
           }
         },
@@ -10444,9 +10443,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 24 ],
-            "CO": [ 23 ],
-            "I0": [ 20 ],
+            "CI": [ 25 ],
+            "CO": [ 24 ],
+            "I0": [ 21 ],
             "I1": [ "1" ]
           }
         },
@@ -10465,9 +10464,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 25 ],
-            "CO": [ 24 ],
-            "I0": [ 19 ],
+            "CI": [ 26 ],
+            "CO": [ 25 ],
+            "I0": [ 20 ],
             "I1": [ "0" ]
           }
         },
@@ -10486,9 +10485,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 26 ],
-            "CO": [ 25 ],
-            "I0": [ 27 ],
+            "CI": [ 27 ],
+            "CO": [ 26 ],
+            "I0": [ 28 ],
             "I1": [ "0" ]
           }
         },
@@ -10507,9 +10506,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 28 ],
-            "CO": [ 26 ],
-            "I0": [ 29 ],
+            "CI": [ 29 ],
+            "CO": [ 27 ],
+            "I0": [ 30 ],
             "I1": [ "0" ]
           }
         },
@@ -10528,9 +10527,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 30 ],
-            "CO": [ 22 ],
-            "I0": [ 18 ],
+            "CI": [ 31 ],
+            "CO": [ 23 ],
+            "I0": [ 19 ],
             "I1": [ "0" ]
           }
         },
@@ -10549,9 +10548,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 31 ],
-            "CO": [ 30 ],
-            "I0": [ 20 ],
+            "CI": [ 32 ],
+            "CO": [ 31 ],
+            "I0": [ 21 ],
             "I1": [ "1" ]
           }
         },
@@ -10570,9 +10569,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 32 ],
-            "CO": [ 31 ],
-            "I0": [ 19 ],
+            "CI": [ 33 ],
+            "CO": [ 32 ],
+            "I0": [ 20 ],
             "I1": [ "0" ]
           }
         },
@@ -10591,9 +10590,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 33 ],
-            "CO": [ 32 ],
-            "I0": [ 27 ],
+            "CI": [ 34 ],
+            "CO": [ 33 ],
+            "I0": [ 28 ],
             "I1": [ "1" ]
           }
         },
@@ -10612,9 +10611,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 28 ],
-            "CO": [ 33 ],
-            "I0": [ 29 ],
+            "CI": [ 29 ],
+            "CO": [ 34 ],
+            "I0": [ 30 ],
             "I1": [ "1" ]
           }
         },
@@ -10629,11 +10628,209 @@
             "cell_src": "top.sv:21.17-21.111",
             "module": "pattern_gen",
             "module_hdlname": "pattern_gen",
-            "module_src": "pattern_gen.sv:1.1-73.10"
+            "module_src": "pattern_gen.sv:1.1-77.10"
           },
           "port_directions": {
           },
           "connections": {
+          }
+        },
+        "mypg.color_SB_DFFE_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "pattern_gen.sv:18.5-28.8|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 35 ],
+            "D": [ 6 ],
+            "E": [ 36 ],
+            "Q": [ 7 ]
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1000000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 37 ],
+            "I1": [ 38 ],
+            "I2": [ 39 ],
+            "I3": [ 40 ],
+            "O": [ 36 ]
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_I2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1000000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 19 ],
+            "I1": [ 41 ],
+            "I2": [ 38 ],
+            "I3": [ 39 ],
+            "O": [ 42 ]
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_I2_I1_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 21 ],
+            "I3": [ 30 ],
+            "O": [ 41 ]
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000000011"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 20 ],
+            "I2": [ 28 ],
+            "I3": [ 29 ],
+            "O": [ 38 ]
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000001111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 19 ],
+            "I3": [ 21 ],
+            "O": [ 37 ]
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0100000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 30 ],
+            "I1": [ 43 ],
+            "I2": [ 44 ],
+            "I3": [ 45 ],
+            "O": [ 40 ]
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_O_3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000000001"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 46 ],
+            "I1": [ 47 ],
+            "I2": [ 48 ],
+            "I3": [ 49 ],
+            "O": [ 39 ]
           }
         },
         "mypll1": {
@@ -10678,7 +10875,7 @@
           },
           "connections": {
             "BYPASS": [ "0" ],
-            "LOCK": [ 34 ],
+            "LOCK": [ 50 ],
             "PLLOUTCORE": [ 35 ],
             "REFERENCECLK": [ 2 ],
             "RESETB": [ "1" ]
@@ -10720,9 +10917,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 36 ],
-            "Q": [ 18 ],
-            "R": [ 37 ]
+            "D": [ 51 ],
+            "Q": [ 19 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_1": {
@@ -10743,9 +10940,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 38 ],
-            "Q": [ 20 ],
-            "R": [ 37 ]
+            "D": [ 52 ],
+            "Q": [ 21 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_1_D_SB_LUT4_O": {
@@ -10768,9 +10965,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 20 ],
-            "I3": [ 39 ],
-            "O": [ 38 ]
+            "I2": [ 21 ],
+            "I3": [ 53 ],
+            "O": [ 52 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_1_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -10788,10 +10985,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 40 ],
-            "CO": [ 39 ],
+            "CI": [ 54 ],
+            "CO": [ 53 ],
             "I0": [ "0" ],
-            "I1": [ 19 ]
+            "I1": [ 20 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_2": {
@@ -10812,9 +11009,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 41 ],
-            "Q": [ 19 ],
-            "R": [ 37 ]
+            "D": [ 55 ],
+            "Q": [ 20 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_2_D_SB_LUT4_O": {
@@ -10837,9 +11034,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 19 ],
-            "I3": [ 40 ],
-            "O": [ 41 ]
+            "I2": [ 20 ],
+            "I3": [ 54 ],
+            "O": [ 55 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_2_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -10857,10 +11054,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 42 ],
-            "CO": [ 40 ],
+            "CI": [ 56 ],
+            "CO": [ 54 ],
             "I0": [ "0" ],
-            "I1": [ 27 ]
+            "I1": [ 28 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_3": {
@@ -10881,9 +11078,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 43 ],
-            "Q": [ 27 ],
-            "R": [ 37 ]
+            "D": [ 57 ],
+            "Q": [ 28 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_3_D_SB_LUT4_O": {
@@ -10906,9 +11103,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 27 ],
-            "I3": [ 42 ],
-            "O": [ 43 ]
+            "I2": [ 28 ],
+            "I3": [ 56 ],
+            "O": [ 57 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_3_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -10926,10 +11123,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 44 ],
-            "CO": [ 42 ],
+            "CI": [ 58 ],
+            "CO": [ 56 ],
             "I0": [ "0" ],
-            "I1": [ 29 ]
+            "I1": [ 30 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_4": {
@@ -10950,9 +11147,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 45 ],
-            "Q": [ 29 ],
-            "R": [ 37 ]
+            "D": [ 59 ],
+            "Q": [ 30 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_4_D_SB_LUT4_O": {
@@ -10975,9 +11172,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 29 ],
-            "I3": [ 44 ],
-            "O": [ 45 ]
+            "I2": [ 30 ],
+            "I3": [ 58 ],
+            "O": [ 59 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_4_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -10995,10 +11192,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 46 ],
-            "CO": [ 44 ],
+            "CI": [ 60 ],
+            "CO": [ 58 ],
             "I0": [ "0" ],
-            "I1": [ 28 ]
+            "I1": [ 29 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_5": {
@@ -11019,9 +11216,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 47 ],
-            "Q": [ 28 ],
-            "R": [ 37 ]
+            "D": [ 61 ],
+            "Q": [ 29 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_5_D_SB_LUT4_O": {
@@ -11044,9 +11241,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 28 ],
-            "I3": [ 46 ],
-            "O": [ 47 ]
+            "I2": [ 29 ],
+            "I3": [ 60 ],
+            "O": [ 61 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_5_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11064,10 +11261,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 48 ],
-            "CO": [ 46 ],
+            "CI": [ 62 ],
+            "CO": [ 60 ],
             "I0": [ "0" ],
-            "I1": [ 49 ]
+            "I1": [ 46 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_6": {
@@ -11088,9 +11285,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 50 ],
-            "Q": [ 49 ],
-            "R": [ 37 ]
+            "D": [ 63 ],
+            "Q": [ 46 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_6_D_SB_LUT4_O": {
@@ -11113,9 +11310,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 49 ],
-            "I3": [ 48 ],
-            "O": [ 50 ]
+            "I2": [ 46 ],
+            "I3": [ 62 ],
+            "O": [ 63 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_6_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11133,10 +11330,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 51 ],
-            "CO": [ 48 ],
+            "CI": [ 64 ],
+            "CO": [ 62 ],
             "I0": [ "0" ],
-            "I1": [ 52 ]
+            "I1": [ 47 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_7": {
@@ -11157,9 +11354,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 53 ],
-            "Q": [ 52 ],
-            "R": [ 37 ]
+            "D": [ 65 ],
+            "Q": [ 47 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_7_D_SB_LUT4_O": {
@@ -11182,9 +11379,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 52 ],
-            "I3": [ 51 ],
-            "O": [ 53 ]
+            "I2": [ 47 ],
+            "I3": [ 64 ],
+            "O": [ 65 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_7_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11202,10 +11399,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 54 ],
-            "CO": [ 51 ],
+            "CI": [ 49 ],
+            "CO": [ 64 ],
             "I0": [ "0" ],
-            "I1": [ 55 ]
+            "I1": [ 48 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_8": {
@@ -11226,9 +11423,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 56 ],
-            "Q": [ 55 ],
-            "R": [ 37 ]
+            "D": [ 66 ],
+            "Q": [ 48 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_8_D_SB_LUT4_O": {
@@ -11251,9 +11448,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 55 ],
-            "I3": [ 54 ],
-            "O": [ 56 ]
+            "I2": [ 48 ],
+            "I3": [ 49 ],
+            "O": [ 66 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_9": {
@@ -11274,9 +11471,9 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 57 ],
-            "Q": [ 54 ],
-            "R": [ 37 ]
+            "D": [ 67 ],
+            "Q": [ 49 ],
+            "R": [ 42 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_9_D_SB_LUT4_O": {
@@ -11300,8 +11497,8 @@
             "I0": [ "0" ],
             "I1": [ "0" ],
             "I2": [ "0" ],
-            "I3": [ 54 ],
-            "O": [ 57 ]
+            "I3": [ 49 ],
+            "O": [ 67 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_D_SB_LUT4_O": {
@@ -11324,9 +11521,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 18 ],
-            "I3": [ 58 ],
-            "O": [ 36 ]
+            "I2": [ 19 ],
+            "I3": [ 68 ],
+            "O": [ 51 ]
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11344,85 +11541,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 39 ],
-            "CO": [ 58 ],
+            "CI": [ 53 ],
+            "CO": [ 68 ],
             "I0": [ "0" ],
-            "I1": [ 20 ]
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_R_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0001000000000000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 55 ],
-            "I1": [ 54 ],
-            "I2": [ 59 ],
-            "I3": [ 60 ],
-            "O": [ 37 ]
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_R_SB_LUT4_O_I2_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000000001000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 18 ],
-            "I1": [ 20 ],
-            "I2": [ 19 ],
-            "I3": [ 27 ],
-            "O": [ 60 ]
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_R_SB_LUT4_O_I2_SB_LUT4_O_1": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000000000010"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 29 ],
-            "I1": [ 28 ],
-            "I2": [ 49 ],
-            "I3": [ 52 ],
-            "O": [ 59 ]
+            "I1": [ 21 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q": {
@@ -11444,10 +11566,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 61 ],
-            "E": [ 37 ],
-            "Q": [ 10 ],
-            "R": [ 62 ]
+            "D": [ 69 ],
+            "E": [ 42 ],
+            "Q": [ 11 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_1": {
@@ -11469,10 +11591,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 63 ],
-            "E": [ 37 ],
-            "Q": [ 12 ],
-            "R": [ 62 ]
+            "D": [ 71 ],
+            "E": [ 42 ],
+            "Q": [ 13 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_1_D_SB_LUT4_O": {
@@ -11495,9 +11617,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 12 ],
-            "I3": [ 64 ],
-            "O": [ 63 ]
+            "I2": [ 13 ],
+            "I3": [ 72 ],
+            "O": [ 71 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_1_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11515,10 +11637,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 65 ],
-            "CO": [ 64 ],
+            "CI": [ 73 ],
+            "CO": [ 72 ],
             "I0": [ "0" ],
-            "I1": [ 14 ]
+            "I1": [ 15 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_2": {
@@ -11540,10 +11662,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 66 ],
-            "E": [ 37 ],
-            "Q": [ 14 ],
-            "R": [ 62 ]
+            "D": [ 74 ],
+            "E": [ 42 ],
+            "Q": [ 15 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_2_D_SB_LUT4_O": {
@@ -11566,9 +11688,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 14 ],
-            "I3": [ 65 ],
-            "O": [ 66 ]
+            "I2": [ 15 ],
+            "I3": [ 73 ],
+            "O": [ 74 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_2_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11586,10 +11708,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 67 ],
-            "CO": [ 65 ],
+            "CI": [ 75 ],
+            "CO": [ 73 ],
             "I0": [ "0" ],
-            "I1": [ 16 ]
+            "I1": [ 17 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_3": {
@@ -11611,10 +11733,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 68 ],
-            "E": [ 37 ],
-            "Q": [ 16 ],
-            "R": [ 62 ]
+            "D": [ 76 ],
+            "E": [ 42 ],
+            "Q": [ 17 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_3_D_SB_LUT4_O": {
@@ -11637,9 +11759,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 16 ],
-            "I3": [ 67 ],
-            "O": [ 68 ]
+            "I2": [ 17 ],
+            "I3": [ 75 ],
+            "O": [ 76 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_3_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11657,10 +11779,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 69 ],
-            "CO": [ 67 ],
+            "CI": [ 77 ],
+            "CO": [ 75 ],
             "I0": [ "0" ],
-            "I1": [ 15 ]
+            "I1": [ 16 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_4": {
@@ -11682,10 +11804,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 70 ],
-            "E": [ 37 ],
-            "Q": [ 15 ],
-            "R": [ 62 ]
+            "D": [ 78 ],
+            "E": [ 42 ],
+            "Q": [ 16 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_4_D_SB_LUT4_O": {
@@ -11708,9 +11830,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 15 ],
-            "I3": [ 69 ],
-            "O": [ 70 ]
+            "I2": [ 16 ],
+            "I3": [ 77 ],
+            "O": [ 78 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_4_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11728,10 +11850,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 71 ],
-            "CO": [ 69 ],
+            "CI": [ 79 ],
+            "CO": [ 77 ],
             "I0": [ "0" ],
-            "I1": [ 72 ]
+            "I1": [ 80 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_5": {
@@ -11753,10 +11875,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 73 ],
-            "E": [ 37 ],
-            "Q": [ 72 ],
-            "R": [ 62 ]
+            "D": [ 81 ],
+            "E": [ 42 ],
+            "Q": [ 80 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_5_D_SB_LUT4_O": {
@@ -11779,9 +11901,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 72 ],
-            "I3": [ 71 ],
-            "O": [ 73 ]
+            "I2": [ 80 ],
+            "I3": [ 79 ],
+            "O": [ 81 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_5_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11799,10 +11921,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 74 ],
-            "CO": [ 71 ],
+            "CI": [ 82 ],
+            "CO": [ 79 ],
             "I0": [ "0" ],
-            "I1": [ 75 ]
+            "I1": [ 83 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_6": {
@@ -11824,10 +11946,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 76 ],
-            "E": [ 37 ],
-            "Q": [ 75 ],
-            "R": [ 62 ]
+            "D": [ 84 ],
+            "E": [ 42 ],
+            "Q": [ 83 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_6_D_SB_LUT4_O": {
@@ -11850,9 +11972,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 75 ],
-            "I3": [ 74 ],
-            "O": [ 76 ]
+            "I2": [ 83 ],
+            "I3": [ 82 ],
+            "O": [ 84 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_6_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11870,10 +11992,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 77 ],
-            "CO": [ 74 ],
+            "CI": [ 85 ],
+            "CO": [ 82 ],
             "I0": [ "0" ],
-            "I1": [ 78 ]
+            "I1": [ 86 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_7": {
@@ -11895,10 +12017,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 79 ],
-            "E": [ 37 ],
-            "Q": [ 78 ],
-            "R": [ 62 ]
+            "D": [ 87 ],
+            "E": [ 42 ],
+            "Q": [ 86 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_7_D_SB_LUT4_O": {
@@ -11921,9 +12043,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 78 ],
-            "I3": [ 77 ],
-            "O": [ 79 ]
+            "I2": [ 86 ],
+            "I3": [ 85 ],
+            "O": [ 87 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_7_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -11941,10 +12063,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 80 ],
-            "CO": [ 77 ],
+            "CI": [ 88 ],
+            "CO": [ 85 ],
             "I0": [ "0" ],
-            "I1": [ 81 ]
+            "I1": [ 89 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_8": {
@@ -11966,10 +12088,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 82 ],
-            "E": [ 37 ],
-            "Q": [ 81 ],
-            "R": [ 62 ]
+            "D": [ 90 ],
+            "E": [ 42 ],
+            "Q": [ 89 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_8_D_SB_LUT4_O": {
@@ -11992,9 +12114,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 81 ],
-            "I3": [ 80 ],
-            "O": [ 82 ]
+            "I2": [ 89 ],
+            "I3": [ 88 ],
+            "O": [ 90 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_9": {
@@ -12016,10 +12138,10 @@
           },
           "connections": {
             "C": [ 35 ],
-            "D": [ 83 ],
-            "E": [ 37 ],
-            "Q": [ 80 ],
-            "R": [ 62 ]
+            "D": [ 91 ],
+            "E": [ 42 ],
+            "Q": [ 88 ],
+            "R": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_9_D_SB_LUT4_O": {
@@ -12043,8 +12165,8 @@
             "I0": [ "0" ],
             "I1": [ "0" ],
             "I2": [ "0" ],
-            "I3": [ 80 ],
-            "O": [ 83 ]
+            "I3": [ 88 ],
+            "O": [ 91 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_D_SB_LUT4_O": {
@@ -12067,9 +12189,9 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 10 ],
-            "I3": [ 84 ],
-            "O": [ 61 ]
+            "I2": [ 11 ],
+            "I3": [ 92 ],
+            "O": [ 69 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO": {
@@ -12087,10 +12209,10 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 64 ],
-            "CO": [ 84 ],
+            "CI": [ 72 ],
+            "CO": [ 92 ],
             "I0": [ "0" ],
-            "I1": [ 12 ]
+            "I1": [ 13 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O": {
@@ -12111,18 +12233,93 @@
             "O": "output"
           },
           "connections": {
-            "I0": [ 81 ],
-            "I1": [ 80 ],
-            "I2": [ 85 ],
-            "I3": [ 86 ],
-            "O": [ 62 ]
+            "I0": [ 89 ],
+            "I1": [ 88 ],
+            "I2": [ 93 ],
+            "I3": [ 45 ],
+            "O": [ 70 ]
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O_I2_SB_LUT4_O": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
-            "LUT_INIT": "0001000000000000"
+            "LUT_INIT": "0010000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 11 ],
+            "I1": [ 13 ],
+            "I2": [ 83 ],
+            "I3": [ 86 ],
+            "O": [ 93 ]
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000000001"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 11 ],
+            "I1": [ 13 ],
+            "I2": [ 83 ],
+            "I3": [ 86 ],
+            "O": [ 44 ]
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O_I3_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000001111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 89 ],
+            "I3": [ 88 ],
+            "O": [ 43 ]
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O_I3_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000000001"
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
@@ -12137,35 +12334,10 @@
           },
           "connections": {
             "I0": [ 15 ],
-            "I1": [ 72 ],
-            "I2": [ 75 ],
-            "I3": [ 78 ],
-            "O": [ 85 ]
-          }
-        },
-        "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O_I2_SB_LUT4_O_1": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000000000010"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 10 ],
-            "I1": [ 12 ],
-            "I2": [ 14 ],
-            "I3": [ 16 ],
-            "O": [ 86 ]
+            "I1": [ 17 ],
+            "I2": [ 16 ],
+            "I3": [ 80 ],
+            "O": [ 45 ]
           }
         },
         "vsync_SB_LUT4_O": {
@@ -12188,8 +12360,8 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 87 ],
-            "I3": [ 88 ],
+            "I2": [ 94 ],
+            "I3": [ 95 ],
             "O": [ 4 ]
           }
         },
@@ -12208,9 +12380,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 89 ],
-            "CO": [ 87 ],
-            "I0": [ 10 ],
+            "CI": [ 96 ],
+            "CO": [ 94 ],
+            "I0": [ 11 ],
             "I1": [ "1" ]
           }
         },
@@ -12229,9 +12401,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 90 ],
-            "CO": [ 89 ],
-            "I0": [ 12 ],
+            "CI": [ 97 ],
+            "CO": [ 96 ],
+            "I0": [ 13 ],
             "I1": [ "0" ]
           }
         },
@@ -12250,9 +12422,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 91 ],
-            "CO": [ 90 ],
-            "I0": [ 14 ],
+            "CI": [ 98 ],
+            "CO": [ 97 ],
+            "I0": [ 15 ],
             "I1": [ "0" ]
           }
         },
@@ -12271,9 +12443,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 92 ],
-            "CO": [ 91 ],
-            "I0": [ 16 ],
+            "CI": [ 99 ],
+            "CO": [ 98 ],
+            "I0": [ 17 ],
             "I1": [ "0" ]
           }
         },
@@ -12292,9 +12464,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 93 ],
-            "CO": [ 92 ],
-            "I0": [ 15 ],
+            "CI": [ 100 ],
+            "CO": [ 99 ],
+            "I0": [ 16 ],
             "I1": [ "0" ]
           }
         },
@@ -12313,9 +12485,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 94 ],
-            "CO": [ 93 ],
-            "I0": [ 72 ],
+            "CI": [ 101 ],
+            "CO": [ 100 ],
+            "I0": [ 80 ],
             "I1": [ "1" ]
           }
         },
@@ -12334,9 +12506,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 78 ],
-            "CO": [ 94 ],
-            "I0": [ 75 ],
+            "CI": [ 86 ],
+            "CO": [ 101 ],
+            "I0": [ 83 ],
             "I1": [ "0" ]
           }
         },
@@ -12355,9 +12527,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 95 ],
-            "CO": [ 88 ],
-            "I0": [ 10 ],
+            "CI": [ 102 ],
+            "CO": [ 95 ],
+            "I0": [ 11 ],
             "I1": [ "1" ]
           }
         },
@@ -12376,9 +12548,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 96 ],
-            "CO": [ 95 ],
-            "I0": [ 12 ],
+            "CI": [ 103 ],
+            "CO": [ 102 ],
+            "I0": [ 13 ],
             "I1": [ "0" ]
           }
         },
@@ -12397,9 +12569,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 97 ],
-            "CO": [ 96 ],
-            "I0": [ 14 ],
+            "CI": [ 104 ],
+            "CO": [ 103 ],
+            "I0": [ 15 ],
             "I1": [ "0" ]
           }
         },
@@ -12418,9 +12590,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 98 ],
-            "CO": [ 97 ],
-            "I0": [ 16 ],
+            "CI": [ 105 ],
+            "CO": [ 104 ],
+            "I0": [ 17 ],
             "I1": [ "0" ]
           }
         },
@@ -12439,9 +12611,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 99 ],
-            "CO": [ 98 ],
-            "I0": [ 15 ],
+            "CI": [ 106 ],
+            "CO": [ 105 ],
+            "I0": [ 16 ],
             "I1": [ "0" ]
           }
         },
@@ -12460,9 +12632,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 100 ],
-            "CO": [ 99 ],
-            "I0": [ 72 ],
+            "CI": [ 107 ],
+            "CO": [ 106 ],
+            "I0": [ 80 ],
             "I1": [ "1" ]
           }
         },
@@ -12481,9 +12653,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 101 ],
-            "CO": [ 100 ],
-            "I0": [ 75 ],
+            "CI": [ 108 ],
+            "CO": [ 107 ],
+            "I0": [ 83 ],
             "I1": [ "0" ]
           }
         },
@@ -12502,9 +12674,9 @@
             "I1": "input"
           },
           "connections": {
-            "CI": [ 81 ],
-            "CO": [ 101 ],
-            "I0": [ 78 ],
+            "CI": [ 89 ],
+            "CO": [ 108 ],
+            "I0": [ 86 ],
             "I1": [ "1" ]
           }
         }
@@ -12519,7 +12691,7 @@
         },
         "RGB_SB_LUT4_O_I2": {
           "hide_name": 0,
-          "bits": [ 7 ],
+          "bits": [ 8 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:19.31-19.46|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12527,7 +12699,7 @@
         },
         "RGB_SB_LUT4_O_I2_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 9 ],
+          "bits": [ 10 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:19.31-19.46|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12535,7 +12707,7 @@
         },
         "RGB_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 11 ],
+          "bits": [ 12 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:19.31-19.46|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12543,7 +12715,7 @@
         },
         "RGB_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 13 ],
+          "bits": [ 14 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:19.31-19.46|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12551,18 +12723,18 @@
         },
         "RGB_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 8 ],
+          "bits": [ 9 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "pattern_gen.sv:67.13-67.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+            "src": "pattern_gen.sv:71.13-71.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "RGB_SB_LUT4_O_I3_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 17 ],
+          "bits": [ 18 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "pattern_gen.sv:67.13-67.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+            "src": "pattern_gen.sv:71.13-71.22|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "clk": {
@@ -12574,7 +12746,7 @@
         },
         "col_count": {
           "hide_name": 0,
-          "bits": [ 54, 55, 52, 49, 28, 29, 27, 19, 20, 18 ],
+          "bits": [ 49, 48, 47, 46, 29, 30, 28, 20, 21, 19 ],
           "attributes": {
             "src": "top.sv:13.17-13.26"
           }
@@ -12595,7 +12767,7 @@
         },
         "hsync_SB_LUT4_O_I2": {
           "hide_name": 0,
-          "bits": [ 21 ],
+          "bits": [ 22 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.31-12.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12603,7 +12775,7 @@
         },
         "hsync_SB_LUT4_O_I2_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 23 ],
+          "bits": [ 24 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.31-12.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12611,7 +12783,7 @@
         },
         "hsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 24 ],
+          "bits": [ 25 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.31-12.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12619,7 +12791,7 @@
         },
         "hsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 25 ],
+          "bits": [ 26 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.31-12.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12627,7 +12799,7 @@
         },
         "hsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 26 ],
+          "bits": [ 27 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.31-12.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12635,7 +12807,7 @@
         },
         "hsync_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 22 ],
+          "bits": [ 23 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.13-12.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12643,7 +12815,7 @@
         },
         "hsync_SB_LUT4_O_I3_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 30 ],
+          "bits": [ 31 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.13-12.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12651,7 +12823,7 @@
         },
         "hsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 31 ],
+          "bits": [ 32 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.13-12.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12659,7 +12831,7 @@
         },
         "hsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 32 ],
+          "bits": [ 33 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.13-12.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12667,7 +12839,7 @@
         },
         "hsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 33 ],
+          "bits": [ 34 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:12.13-12.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12691,7 +12863,7 @@
         },
         "mypg.col": {
           "hide_name": 0,
-          "bits": [ 54, 55, 52, 49, 28, 29, 27, 19, 20, 18 ],
+          "bits": [ 49, 48, 47, 46, 29, 30, 28, 20, 21, 19 ],
           "attributes": {
             "hdlname": "mypg col",
             "src": "pattern_gen.sv:3.23-3.26"
@@ -12699,15 +12871,43 @@
         },
         "mypg.color": {
           "hide_name": 0,
-          "bits": [ 6, 6, 6, 6, 6, 6 ],
+          "bits": [ 7, 7, 7, 7, 7, 7 ],
           "attributes": {
             "hdlname": "mypg color",
             "src": "pattern_gen.sv:9.17-9.22"
           }
         },
+        "mypg.color_SB_DFFE_Q_E": {
+          "hide_name": 0,
+          "bits": [ 36 ],
+          "attributes": {
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0": {
+          "hide_name": 0,
+          "bits": [ 37, 38, 39, 40 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_I2_I1": {
+          "hide_name": 0,
+          "bits": [ 19, 41, 38, 39 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "mypg.color_SB_DFFE_Q_E_SB_LUT4_O_I0_SB_LUT4_I2_O": {
+          "hide_name": 0,
+          "bits": [ 42 ],
+          "attributes": {
+          }
+        },
         "mypg.row": {
           "hide_name": 0,
-          "bits": [ 80, 81, 78, 75, 72, 15, 16, 14, 12, 10 ],
+          "bits": [ 88, 89, 86, 83, 80, 16, 17, 15, 13, 11 ],
           "attributes": {
             "hdlname": "mypg row",
             "src": "pattern_gen.sv:4.23-4.26"
@@ -12739,7 +12939,7 @@
         },
         "mypll1.locked": {
           "hide_name": 0,
-          "bits": [ 34 ],
+          "bits": [ 50 ],
           "attributes": {
             "hdlname": "mypll1 locked",
             "src": "mypll.sv:16.9-16.15",
@@ -12756,7 +12956,7 @@
         },
         "myvga1.col_count": {
           "hide_name": 0,
-          "bits": [ 54, 55, 52, 49, 28, 29, 27, 19, 20, 18 ],
+          "bits": [ 49, 48, 47, 46, 29, 30, 28, 20, 21, 19 ],
           "attributes": {
             "hdlname": "myvga1 col_count",
             "src": "vga.sv:5.22-5.31"
@@ -12764,13 +12964,13 @@
         },
         "myvga1.col_count_SB_DFFSR_Q_1_D": {
           "hide_name": 0,
-          "bits": [ 38 ],
+          "bits": [ 52 ],
           "attributes": {
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_1_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 39 ],
+          "bits": [ 53 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12778,13 +12978,13 @@
         },
         "myvga1.col_count_SB_DFFSR_Q_2_D": {
           "hide_name": 0,
-          "bits": [ 41 ],
+          "bits": [ 55 ],
           "attributes": {
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_2_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 40 ],
+          "bits": [ 54 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12792,13 +12992,13 @@
         },
         "myvga1.col_count_SB_DFFSR_Q_3_D": {
           "hide_name": 0,
-          "bits": [ 43 ],
+          "bits": [ 57 ],
           "attributes": {
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_3_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 42 ],
+          "bits": [ 56 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12806,79 +13006,11 @@
         },
         "myvga1.col_count_SB_DFFSR_Q_4_D": {
           "hide_name": 0,
-          "bits": [ 45 ],
+          "bits": [ 59 ],
           "attributes": {
           }
         },
         "myvga1.col_count_SB_DFFSR_Q_4_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 44 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_5_D": {
-          "hide_name": 0,
-          "bits": [ 47 ],
-          "attributes": {
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_5_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 46 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_6_D": {
-          "hide_name": 0,
-          "bits": [ 50 ],
-          "attributes": {
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_6_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 48 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_7_D": {
-          "hide_name": 0,
-          "bits": [ 53 ],
-          "attributes": {
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_7_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 51 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_8_D": {
-          "hide_name": 0,
-          "bits": [ 56 ],
-          "attributes": {
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_9_D": {
-          "hide_name": 0,
-          "bits": [ 57 ],
-          "attributes": {
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_D": {
-          "hide_name": 0,
-          "bits": [ 36 ],
-          "attributes": {
-          }
-        },
-        "myvga1.col_count_SB_DFFSR_Q_D_SB_LUT4_O_I3": {
           "hide_name": 0,
           "bits": [ 58 ],
           "attributes": {
@@ -12886,18 +13018,72 @@
             "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
-        "myvga1.col_count_SB_DFFSR_Q_R": {
+        "myvga1.col_count_SB_DFFSR_Q_5_D": {
           "hide_name": 0,
-          "bits": [ 37 ],
+          "bits": [ 61 ],
           "attributes": {
           }
         },
-        "myvga1.col_count_SB_DFFSR_Q_R_SB_LUT4_O_I2": {
+        "myvga1.col_count_SB_DFFSR_Q_5_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 55, 54, 59, 60 ],
+          "bits": [ 60 ],
           "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_6_D": {
+          "hide_name": 0,
+          "bits": [ 63 ],
+          "attributes": {
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_6_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 62 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_7_D": {
+          "hide_name": 0,
+          "bits": [ 65 ],
+          "attributes": {
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_7_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 64 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_8_D": {
+          "hide_name": 0,
+          "bits": [ 66 ],
+          "attributes": {
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_9_D": {
+          "hide_name": 0,
+          "bits": [ 67 ],
+          "attributes": {
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 51 ],
+          "attributes": {
+          }
+        },
+        "myvga1.col_count_SB_DFFSR_Q_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 68 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "vga.sv:29.26-29.43|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "myvga1.hsync": {
@@ -12910,7 +13096,7 @@
         },
         "myvga1.row_count": {
           "hide_name": 0,
-          "bits": [ 80, 81, 78, 75, 72, 15, 16, 14, 12, 10 ],
+          "bits": [ 88, 89, 86, 83, 80, 16, 17, 15, 13, 11 ],
           "attributes": {
             "hdlname": "myvga1 row_count",
             "src": "vga.sv:6.22-6.31"
@@ -12918,13 +13104,13 @@
         },
         "myvga1.row_count_SB_DFFESR_Q_1_D": {
           "hide_name": 0,
-          "bits": [ 63 ],
+          "bits": [ 71 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_1_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 64 ],
+          "bits": [ 72 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12932,13 +13118,13 @@
         },
         "myvga1.row_count_SB_DFFESR_Q_2_D": {
           "hide_name": 0,
-          "bits": [ 66 ],
+          "bits": [ 74 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_2_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 65 ],
+          "bits": [ 73 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12946,13 +13132,13 @@
         },
         "myvga1.row_count_SB_DFFESR_Q_3_D": {
           "hide_name": 0,
-          "bits": [ 68 ],
+          "bits": [ 76 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_3_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 67 ],
+          "bits": [ 75 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -12960,53 +13146,11 @@
         },
         "myvga1.row_count_SB_DFFESR_Q_4_D": {
           "hide_name": 0,
-          "bits": [ 70 ],
+          "bits": [ 78 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_4_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 69 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "myvga1.row_count_SB_DFFESR_Q_5_D": {
-          "hide_name": 0,
-          "bits": [ 73 ],
-          "attributes": {
-          }
-        },
-        "myvga1.row_count_SB_DFFESR_Q_5_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 71 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "myvga1.row_count_SB_DFFESR_Q_6_D": {
-          "hide_name": 0,
-          "bits": [ 76 ],
-          "attributes": {
-          }
-        },
-        "myvga1.row_count_SB_DFFESR_Q_6_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 74 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "myvga1.row_count_SB_DFFESR_Q_7_D": {
-          "hide_name": 0,
-          "bits": [ 79 ],
-          "attributes": {
-          }
-        },
-        "myvga1.row_count_SB_DFFESR_Q_7_D_SB_LUT4_O_I3": {
           "hide_name": 0,
           "bits": [ 77 ],
           "attributes": {
@@ -13014,27 +13158,69 @@
             "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
-        "myvga1.row_count_SB_DFFESR_Q_8_D": {
+        "myvga1.row_count_SB_DFFESR_Q_5_D": {
+          "hide_name": 0,
+          "bits": [ 81 ],
+          "attributes": {
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_5_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 79 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_6_D": {
+          "hide_name": 0,
+          "bits": [ 84 ],
+          "attributes": {
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_6_D_SB_LUT4_O_I3": {
           "hide_name": 0,
           "bits": [ 82 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_7_D": {
+          "hide_name": 0,
+          "bits": [ 87 ],
+          "attributes": {
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_7_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 85 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_8_D": {
+          "hide_name": 0,
+          "bits": [ 90 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_9_D": {
           "hide_name": 0,
-          "bits": [ 83 ],
+          "bits": [ 91 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_D": {
           "hide_name": 0,
-          "bits": [ 61 ],
+          "bits": [ 69 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 84 ],
+          "bits": [ 92 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:27.31-27.48|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13042,13 +13228,21 @@
         },
         "myvga1.row_count_SB_DFFESR_Q_R": {
           "hide_name": 0,
-          "bits": [ 62 ],
+          "bits": [ 70 ],
           "attributes": {
           }
         },
         "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O_I2": {
           "hide_name": 0,
-          "bits": [ 81, 80, 85, 86 ],
+          "bits": [ 89, 88, 93, 45 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "myvga1.row_count_SB_DFFESR_Q_R_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 30, 43, 44, 45 ],
           "attributes": {
             "force_downto": "00000000000000000000000000000001",
             "src": "/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
@@ -13064,7 +13258,7 @@
         },
         "row_count": {
           "hide_name": 0,
-          "bits": [ 80, 81, 78, 75, 72, 15, 16, 14, 12, 10 ],
+          "bits": [ 88, 89, 86, 83, 80, 16, 17, 15, 13, 11 ],
           "attributes": {
             "src": "top.sv:12.17-12.26"
           }
@@ -13085,7 +13279,7 @@
         },
         "vsync_SB_LUT4_O_I2": {
           "hide_name": 0,
-          "bits": [ 87 ],
+          "bits": [ 94 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.31-16.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13093,7 +13287,7 @@
         },
         "vsync_SB_LUT4_O_I2_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 89 ],
+          "bits": [ 96 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.31-16.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13101,7 +13295,7 @@
         },
         "vsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 90 ],
+          "bits": [ 97 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.31-16.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13109,7 +13303,7 @@
         },
         "vsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 91 ],
+          "bits": [ 98 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.31-16.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13117,7 +13311,7 @@
         },
         "vsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 92 ],
+          "bits": [ 99 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.31-16.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13125,7 +13319,7 @@
         },
         "vsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 93 ],
+          "bits": [ 100 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.31-16.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13133,7 +13327,7 @@
         },
         "vsync_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 94 ],
+          "bits": [ 101 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.31-16.47|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13141,7 +13335,7 @@
         },
         "vsync_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 88 ],
+          "bits": [ 95 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13149,7 +13343,7 @@
         },
         "vsync_SB_LUT4_O_I3_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 95 ],
+          "bits": [ 102 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13157,7 +13351,7 @@
         },
         "vsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 96 ],
+          "bits": [ 103 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13165,7 +13359,7 @@
         },
         "vsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 97 ],
+          "bits": [ 104 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13173,7 +13367,7 @@
         },
         "vsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 98 ],
+          "bits": [ 105 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13181,7 +13375,7 @@
         },
         "vsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 99 ],
+          "bits": [ 106 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13189,7 +13383,7 @@
         },
         "vsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 100 ],
+          "bits": [ 107 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
@@ -13197,7 +13391,7 @@
         },
         "vsync_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
           "hide_name": 0,
-          "bits": [ 101 ],
+          "bits": [ 108 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
             "src": "vga.sv:16.13-16.28|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/samsherman/.apio/packages/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"

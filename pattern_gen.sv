@@ -17,6 +17,14 @@ module pattern_gen (
 
     always_ff @(posedge clk) begin
         state <= next_state;
+
+        if (col == 0 && row == 0) begin
+            case(trigger)       
+                1:   color <= 6'b111111;
+                0:   color <= 6'b000000;
+                default:        color <= 6'b010110;
+            endcase
+        end
     end
 
     // always_comb begin
@@ -58,11 +66,7 @@ module pattern_gen (
     always_comb begin
 
         // Output logic
-        case(trigger)       
-            1:   color = 6'b111111;
-            0:   color = 6'b000000;
-            default:        color = 6'b010110;
-        endcase
+        
 
         if (col < 640 && valid) 
             RGB = color;
