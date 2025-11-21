@@ -4,7 +4,8 @@ module vga(
   output logic vsync,
   output logic [9:0] col_count,
   output logic [9:0] row_count,
-  output logic valid
+  output logic valid,
+  output logic reset
 );
 
     always_comb begin
@@ -21,9 +22,13 @@ module vga(
     end
   
     always_ff @(posedge clk) begin
+        if (reset) reset <= 1'b0;
         if (col_count == 10'd800) begin
             col_count <= 10'd0;
-            if (row_count == 10'd525) row_count <= 10'd0;
+            if (row_count == 10'd525) begin
+                row_count <= 10'd0;
+                reset <= 1'b1;
+            end
             else row_count <= row_count + 10'd1;
         end else begin
             col_count <= col_count + 10'd1;

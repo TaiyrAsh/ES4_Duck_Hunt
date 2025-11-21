@@ -4,6 +4,7 @@ module pattern_gen (
     input logic [9:0] row,
     input logic trigger,
     input logic clk,
+    input logic screen_reset,
     output logic [5:0] RGB
 );
     logic [5:0] color;
@@ -15,16 +16,15 @@ module pattern_gen (
     state_t state = IDLE;
     state_t next_state;
 
-    always_ff @(posedge clk) begin
+    always_ff @(posedge screen_reset) begin
         state <= next_state;
 
-        if (col == 0 && row == 0) begin
-            case(trigger)       
-                1:   color <= 6'b111111;
-                0:   color <= 6'b000000;
-                default:        color <= 6'b010110;
-            endcase
-        end
+        case(trigger)       
+            1:   color <= 6'b111111;
+            0:   color <= 6'b000000;
+            default:        color <= 6'b010110;
+        endcase
+        
     end
 
     // always_comb begin
@@ -65,10 +65,8 @@ module pattern_gen (
 
     always_comb begin
 
-        // Output logic
-        
 
-        if (col < 640 && valid) 
+        if (valid) 
             RGB = color;
         else 
             RGB = 6'd0;
