@@ -3,36 +3,69 @@ module pattern_gen (
     input logic [9:0] col,
     input logic [9:0] row,
     input logic trigger,
-    input logic clk60,
+    input logic clk,
     output logic [5:0] RGB
 );
+    logic [5:0] color;
+    
+    
+    typedef enum {IDLE, TRIGGER_PULLED, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
+    
+    // 1. Initialize the state here
+    state_t state = IDLE;
+    state_t next_state;
 
-    logic [5:0] color = 6'b111111; // Initialize to white
-    logic trigger_prev = 1'b0;     // Store previous trigger state
-    logic flash = 1'b0;            // Flash state: 1 = show black this frame
-
-    // Sequential: detect trigger and flash black for exactly one frame
-    always_ff @(posedge clk60) begin
-        trigger_prev <= trigger;
-        
-        // Detect rising edge of trigger
-        if(trigger && !trigger_prev) begin
-            flash <= 1'b1;  // Schedule a black frame
-        end else if(flash) begin
-            flash <= 1'b0;  // Clear after one frame
-        end
-        
-        // Set color based on flash state
-        if(flash)
-            color <= 6'b000000; // Black during flash
-        else
-            color <= 6'b111111; // White otherwise
+    always_ff @(posedge clk) begin
+        state <= next_state;
     end
 
-    // Combinational: drive RGB based on col/valid
+    // always_comb begin
+    //     // Default next_state to current state to prevent latches
+    //     next_state = state; 
+
+    //     // State transition logic
+    //     if(trigger && state == IDLE) begin
+    //         next_state = TRIGGER_PULLED;
+    //     end else begin
+    //         // Only transition at the start of a frame (row=0, col=0)
+    //         if (col == 0 && row == 0) begin
+    //             case (state)
+    //                 TRIGGER_PULLED: next_state = BLACK_SCREEN;
+    //                 HELD:           begin
+    //                     if (trigger) next_state = state;
+    //                     else next_state = IDLE;
+    //                 end
+    //                 BLACK_SCREEN:   next_state = WHITE_SCREEN;
+    //                 WHITE_SCREEN:   next_state = HELD;
+    //                 default:        next_state = state;
+    //             endcase
+    //         end
+    //     end
+
+    //     // Output logic
+    //     case(state)       
+    //         BLACK_SCREEN:   color = 6'b000000;
+    //         WHITE_SCREEN:   color = 6'b111111;
+    //         default:        color = 6'b010110;
+    //     endcase
+
+    //     if (col < 640 && valid) 
+    //         RGB = color;
+    //     else 
+    //         RGB = 6'd0;
+    // end
+
     always_comb begin
+
+        // Output logic
+        case(trigger)       
+            1:   color = 6'b111111;
+            0:   color = 6'b000000;
+            default:        color = 6'b010110;
+        endcase
+
         if (col < 640 && valid) 
-            RGB = color; 
+            RGB = color;
         else 
             RGB = 6'd0;
     end
