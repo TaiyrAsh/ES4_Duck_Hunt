@@ -1,0 +1,10 @@
+set_io extern_clk 20
+set_io hsync 25
+set_io vsync 23
+set_io RGB[0] 37 // red
+set_io RGB[1] 31 // red
+set_io RGB[2] 35 // green
+set_io RGB[3] 32 // green 
+set_io RGB[4] 27 // blue
+set_io RGB[5] 26 // blue
+set_io trigger 45
