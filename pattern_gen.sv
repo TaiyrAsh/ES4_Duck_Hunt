@@ -9,23 +9,17 @@ module pattern_gen (
     output logic debug
 );
     logic [5:0] color;
+    loigc [5:0] b_color;
+    //TODO: ROM Module here: row,col,clock as input -> RGB output
     
     
     typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
     
-    // 1. Initialize the state here
     state_t state = IDLE;
     state_t next_state;
     assign debug = trigger;
     always_ff @(posedge screen_reset) begin
         state <= next_state;
-
-        // case(trigger)       
-        //     1:   color <= 6'b111111;
-        //     0:   color <= 6'b000000;
-        //     default:        color <= 6'b010110;
-        // endcase
-        
     end
 
     always_comb begin
@@ -52,6 +46,7 @@ module pattern_gen (
         case(state)       
             BLACK_SCREEN:   color = 6'b000000;
             WHITE_SCREEN:   color = 6'b111111;
+            //TODO: replace default with 
             default:        color = 6'b010110;
         endcase
 
@@ -60,14 +55,5 @@ module pattern_gen (
         else 
             RGB = 6'd0;
     end
-
-    // always_comb begin
-
-
-    //     if (valid) 
-    //         RGB = color;
-    //     else 
-    //         RGB = 6'd0;
-    // end
 
 endmodule
