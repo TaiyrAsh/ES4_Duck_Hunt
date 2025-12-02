@@ -6,7 +6,6 @@ module pattern_gen (
     input logic clk,
     input logic screen_reset,
     output logic [5:0] RGB,
-    output logic debug
 );
     logic [5:0] color;
     loigc [5:0] b_color;
