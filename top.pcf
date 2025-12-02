@@ -8,3 +8,4 @@ set_io RGB[3] 32 // green
 set_io RGB[4] 27 // blue
 set_io RGB[5] 26 // blue
 set_io trigger 45
+set_io debug 4
