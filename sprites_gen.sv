@@ -30,10 +30,9 @@ module sprites_gen (
     output logic [5:0] rgb
 );
 
-    logic [ADDR_BITS-1:0] pixel_addr;
     parameter ADDR_BITS = 10;
 
-    
+    get_rom_data rom(.clk(clk), .pixel_addr(tile_addr), .rgb(tile_color));
     // 8×8 tiles → find which tile we're in
     logic [6:0] tile_x;     // 0..79
     logic [5:0] tile_y;     // 0..59
