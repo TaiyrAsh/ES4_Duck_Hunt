@@ -5,7 +5,8 @@ module pattern_gen (
     input logic trigger,
     input logic clk,
     input logic screen_reset,
-    output logic [5:0] RGB
+    output logic [5:0] RGB,
+    input logic detect
 );
 
     logic [5:0] color;
@@ -24,42 +25,55 @@ module pattern_gen (
     localparam SCREEN_HEIGHT = 480;
 
     // Update box_x on each screen_reset
+
+    typedef enum {FLYING, HIT, LANDED} state_d;
+    state_d state = FLYING;
+    state_d next_state;
+
+
     always_ff @(posedge screen_reset) begin
-        if (box_l >= SCREEN_WIDTH-BOX_WIDTH) begin
-           // box_l <= box_l - hs;
-            forward <= 0;
-        end else if (box_l <= 0) begin
-           // box_l <= box_l + hs;
-            forward <= 1;
-        end
-
-        if (forward == 1) begin
-            box_l <= box_l + hs;
+//horizontal mvmnt
+        if (forward) begin
+            //checking box_l to hs to see next posistion before moving
+            if (box_l + hs >= SCREEN_WIDTH - BOX_WIDTH) begin
+                box_l <= SCREEN_WIDTH - BOX_WIDTH;
+                forward <= 0;
+            end else begin
+                box_l <= box_l + hs;
+            end
         end else begin
-            box_l <= box_l - hs;
+            //to prevent wraparound so it doesnt go off screen
+            if (box_l < hs) begin
+                box_l <= 0;
+                forward <= 1;
+            end else begin
+                box_l <= box_l - hs;  // SUBTRACT when moving backward
+            end
         end
-
-        if(box_t <= 0) begin
-          // box_t <= box_t - vs;
-            down <= 1;
-        end else if (box_t >= SCREEN_HEIGHT-BOX_HEIGHT) begin
-          // box_t <= box_t + vs;
-            down <= 0;
-        end
-
-        if (down == 1) begin
-            box_t <= box_t + vs;
+// Vertical movement
+        if (down) begin
+         // MOVE DOWN (subtract)
+         //checking box_t + vs to see next position so it dont go off screen
+            if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
+                box_t <= SCREEN_HEIGHT - BOX_HEIGHT; //set box to the top of screen 
+                down <= 0;  //go down
+            end else begin
+                box_t <= box_t + vs;  // add to move down so you start going down
+            end
         end else begin
-            box_t <= box_t - vs;
+            //comparing top to vs is so there's no wraparound (box_t after subtracting would go negative and bc it is unsigned would go to 1023)
+            if (box_t < vs) begin
+                box_t <= 0;
+                down <= 1;  // Hit top, now go down
+            end else begin
+                box_t <= box_t - vs;  // SUBTRACT to move up
+            end
         end
-
     end
-        
-
     // Calculate box boundaries using box_x
-    logic [9:0] box_l = 120;
+    logic [9:0] box_l = 0;
     logic [9:0] box_r;
-    logic [9:0] box_t = 120;
+    logic [9:0] box_t = 430;
     logic [9:0] box_b;
     
    
@@ -79,13 +93,13 @@ module pattern_gen (
         .rgb(b_color)
     );
 
-    typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
-    state_t state = IDLE;
-    state_t next_state;
+    // typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
+    // state_t state = IDLE;
+    // state_t next_state;
 
-    always_ff @(posedge screen_reset) begin
-        state <= next_state;
-    end
+    // always_ff @(posedge screen_reset) begin
+    //     state <= next_state;
+    // end
 
     always_comb begin
         // Default next_state to current state to prevent latches
