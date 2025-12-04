@@ -10,8 +10,12 @@ module pattern_gen (
 
     logic [5:0] color;
     logic [5:0] b_color;
-    
-    logic [9:0] box_l;
+
+    logic [2:0] vs = 2;
+    logic [2:0] hs = -5;
+
+    logic forward = 1;
+    logic down = 1;
 
     // Box parameters
     localparam BOX_WIDTH  = 50;
@@ -21,24 +25,45 @@ module pattern_gen (
 
     // Update box_x on each screen_reset
     always_ff @(posedge screen_reset) begin
-        if (box_l >= SCREEN_WIDTH - BOX_WIDTH) begin
-            box_l <= '0;
-            box_l <= box_l + 5;
+        if (box_l >= SCREEN_WIDTH-BOX_WIDTH) begin
+           // box_l <= box_l - hs;
+            forward <= 0;
+        end else if (box_l <= 0) begin
+           // box_l <= box_l + hs;
+            forward <= 1;
+        end
+
+        if (forward == 1) begin
+            box_l <= box_l + hs;
         end else begin
-            box_l <= box_l + 5;
-            end
+            box_l <= box_l - hs;
+        end
+
+        if(box_t <= 0) begin
+          // box_t <= box_t - vs;
+            down <= 1;
+        end else if (box_t >= SCREEN_HEIGHT-BOX_HEIGHT) begin
+          // box_t <= box_t + vs;
+            down <= 0;
+        end
+
+        if (down == 1) begin
+            box_t <= box_t + vs;
+        end else begin
+            box_t <= box_t - vs;
+        end
+
     end
         
 
     // Calculate box boundaries using box_x
-    logic [9:0] box_l;
+    logic [9:0] box_l = 120;
     logic [9:0] box_r;
-    logic [9:0] box_t;
+    logic [9:0] box_t = 120;
     logic [9:0] box_b;
     
    
-    assign box_r  = box_l + BOX_WIDTH;
-    assign box_t    = (SCREEN_HEIGHT - BOX_HEIGHT) / 2;  // Centered vertically
+    assign box_r = box_l + BOX_WIDTH;
     assign box_b = box_t + BOX_HEIGHT;
     
     // Check if current pixel is inside the box

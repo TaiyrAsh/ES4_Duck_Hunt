@@ -30,37 +30,19 @@ module sprites_gen (
     output logic [5:0] rgb
 );
 
-    parameter ADDR_BITS = 13;
+    parameter ADDR_BITS = 13; //change to correspond with number of lines of data being read in
 
     get_rom_data rom(.clk(clk), .pixel_addr(tile_addr), .rgb(rgb));
     // 8×8 tiles → find which tile we're in
-    logic [6:0] tile_x;     // 0..79
-    logic [5:0] tile_y;     // 0..59
+    logic [6:0] tile_x;     // 80 tiles in x direction for 8x8 blocks
+    logic [5:0] tile_y;     // 60 tiles in y direction for 8x8 blocks
     logic [ADDR_BITS-1:0] tile_addr; 
-
-    // always_ff @(posedge clk) begin
-    //     if (rst) begin
-    //         hcount <= 0;
-    //         vcount <= 0;
-    //     end 
-    //     else begin
-    //         if (hcount == 639) begin // Pixel length of image
-    //             hcount <= 0;
-    //             if (vcount == 479) // Pixel width of image
-    //                 vcount <= 0;
-    //             else
-    //                 vcount <= vcount + 1;
-    //         end 
-    //         else hcount <= hcount + 1;
-    //     end
-    // end
-
 
     assign tile_x = hcount[9:3]; 
     assign tile_y = vcount[9:3]; 
 
 
-    assign tile_addr = (tile_y * 80) + tile_x; 
+    assign tile_addr = (tile_y * 80) + tile_x; // change integer to correspond with size of pixel blocks
 
 
 endmodule
