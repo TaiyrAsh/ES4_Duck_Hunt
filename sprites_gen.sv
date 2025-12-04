@@ -7,7 +7,7 @@ module get_rom_data #(
 );
 
     // BRAM array: 2^ADDR_BITS entries of 6 bits each
-    logic [5:0] mem [(2**ADDR_BITS)-1:0];
+    logic [5:0] mem [(2**ADDR_BITS)-1:0]; //Unpacked array from index 0 up to 2**ADDR_BITS
 
     // Load binary memory file
     initial begin
@@ -38,11 +38,11 @@ module sprites_gen (
     logic [5:0] tile_y;     // 60 tiles in y direction for 8x8 blocks
     logic [ADDR_BITS-1:0] tile_addr; 
 
-    assign tile_x = hcount[9:3]; 
+    assign tile_x = hcount[9:3]; //If 8x8 block of pixels, start from bit 3 (100 in binary is 8). if 16x16, start from bit 4
     assign tile_y = vcount[9:3]; 
 
 
-    assign tile_addr = (tile_y * 80) + tile_x; // change integer to correspond with size of pixel blocks
-
+    assign tile_addr = (tile_y * 80) + tile_x; // tile_x only increments on the 8 count of hcount because we're reading from the 4th bit
+                                                //The integer value must match with the number of pixel blocks per line on screen
 
 endmodule
