@@ -12,8 +12,8 @@ module pattern_gen (
     logic [5:0] color;
     logic [5:0] b_color;
 
-    logic [2:0] vs = 2;
-    logic [2:0] hs = -5;
+    logic [5:0] vs = 2;
+    logic [5:0] hs = 5;
 
     logic forward = 1;
     logic down = 1;
@@ -50,6 +50,7 @@ module pattern_gen (
             LANDED: begin
                 if(landed_timer >= LANDED_DELAY) begin
                     duck_next_state = FLYING;
+
                 end
             end
         endcase
@@ -115,6 +116,7 @@ module pattern_gen (
                     box_t <= box_t + vs;
                 end
                 box_l <= box_l;  // Stay in place horizontally
+
             end
             LANDED: begin
                 if (landed_timer >= LANDED_DELAY) begin
@@ -123,6 +125,8 @@ module pattern_gen (
                     box_t <= 480;  // Start near top
                     forward <= 1;
                     down <= 1;
+                    vs <= vs + 5;
+                    hs <= hs + 5;
                 end
             end
             endcase
