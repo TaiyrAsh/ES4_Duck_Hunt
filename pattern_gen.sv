@@ -11,29 +11,28 @@ module pattern_gen (
 
     logic [5:0] color;
     logic [5:0] b_color;
-
+//vertical and horizontal speed of duck
     logic [5:0] vs = 2;
     logic [5:0] hs = 5;
-
+//forward and down bits to control direction for duck "bouncing"
     logic forward = 1;
     logic down = 1;
 
-    // Box parameters
+    // Hit box parameters
     localparam BOX_WIDTH  = 50;
     localparam BOX_HEIGHT = 50;
     localparam SCREEN_WIDTH  = 640;
     localparam SCREEN_HEIGHT = 480;
 
-    // Update box_x on each screen_reset
-
-    // Timer for landed state
+    // Timer for landed state to reset
     logic [7:0] landed_timer = 0;
     localparam LANDED_DELAY = 60;
-
+    // States for Duck State Machine
     typedef enum {FLYING, HIT, LANDED} duck_state_t;
+    //initialize state
     duck_state_t duck_state = FLYING;
     duck_state_t duck_next_state;
-
+    //duck state transitions
     always_comb begin
         duck_next_state = duck_state;
         case(duck_state)
@@ -63,7 +62,7 @@ module pattern_gen (
         // Update state
         duck_state <= duck_next_state;
     
-    // Timer logic - check what state we're GOING to
+    // Timer logic for duck reset
         if (duck_next_state == LANDED) begin
             landed_timer <= landed_timer + 1;
         end else begin
@@ -113,9 +112,10 @@ module pattern_gen (
                 if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
                     box_t <= SCREEN_HEIGHT - BOX_HEIGHT;
                 end else begin
-                    box_t <= box_t + vs;
+                    box_t <= box_t + 5;
                 end
                 box_l <= box_l;  // Stay in place horizontally
+                //maybe warble logic? sway left to right as it falls
 
             end
             LANDED: begin
@@ -125,8 +125,9 @@ module pattern_gen (
                     box_t <= 480;  // Start near top
                     forward <= 1;
                     down <= 1;
-                    vs <= vs + 5;
-                    hs <= hs + 5;
+                    //increase movement speed
+                    vs <= vs + 1;
+                    hs <= hs + 1;
                 end
             end
             endcase
