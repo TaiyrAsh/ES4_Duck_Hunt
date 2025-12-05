@@ -5,9 +5,13 @@ module pattern_gen (
     input logic trigger,
     input logic clk,
     input logic screen_reset,
-    output logic [5:0] RGB,
-    input logic detect
+    input logic detect,
+
+    output logic [5:0] RGB
 );
+    //main game state (start, in game, end)
+    typedef enum {START, IN_GAME, GAME_OVER} game_state_t;
+    game_state_t game_state = START;
 
     logic [5:0] color;
     logic [5:0] b_color;
@@ -68,69 +72,71 @@ module pattern_gen (
         end else begin
             landed_timer <= 0;
         end
-        case(duck_state)
-            FLYING: begin
-                if (forward) begin
-                //checking box_l to hs to see next posistion before moving
-                    if (box_l + hs >= SCREEN_WIDTH - BOX_WIDTH) begin
-                    box_l <= SCREEN_WIDTH - BOX_WIDTH;
-                        forward <= 0;
+        if(state == IDLE || state == HELD) begin
+            case(duck_state)
+                FLYING: begin
+                    if (forward) begin
+                    //checking box_l to hs to see next posistion before moving
+                        if (box_l + hs >= SCREEN_WIDTH - BOX_WIDTH) begin
+                        box_l <= SCREEN_WIDTH - BOX_WIDTH;
+                            forward <= 0;
+                        end else begin
+                            box_l <= box_l + hs;
+                        end
                     end else begin
-                        box_l <= box_l + hs;
+                //to prevent wraparound so it doesnt go off screen
+                        if (box_l < hs) begin
+                            box_l <= 0;
+                            forward <= 1;
+                        end else begin
+                            box_l <= box_l - hs;  // SUBTRACT when moving backward
+                        end
                     end
-                end else begin
-            //to prevent wraparound so it doesnt go off screen
-                    if (box_l < hs) begin
-                        box_l <= 0;
-                        forward <= 1;
+    // Vertical movement
+                    if (down) begin
+            // MOVE DOWN (subtract)
+            //checking box_t + vs to see next position so it dont go off screen
+                        if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
+                            box_t <= SCREEN_HEIGHT - BOX_HEIGHT; //set box to the top of screen 
+                            down <= 0;  //go down
+                        end else begin
+                            box_t <= box_t + vs;  // add to move down so you start going down
+                        end
                     end else begin
-                        box_l <= box_l - hs;  // SUBTRACT when moving backward
+                //comparing top to vs is so there's no wraparound (box_t after subtracting would go negative and bc it is unsigned would go to 1023)
+                        if (box_t < vs) begin
+                            box_t <= 0;
+                            down <= 1;  // Hit top, now go down
+                        end else begin
+                            box_t <= box_t - vs;  // SUBTRACT to move up
+                        end
                     end
-                end
-// Vertical movement
-                if (down) begin
-         // MOVE DOWN (subtract)
-         //checking box_t + vs to see next position so it dont go off screen
+                    end
+                HIT: begin
+                    // Fall straight down
                     if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
-                        box_t <= SCREEN_HEIGHT - BOX_HEIGHT; //set box to the top of screen 
-                        down <= 0;  //go down
+                        box_t <= SCREEN_HEIGHT - BOX_HEIGHT;
                     end else begin
-                        box_t <= box_t + vs;  // add to move down so you start going down
+                        box_t <= box_t + 5;
                     end
-                end else begin
-            //comparing top to vs is so there's no wraparound (box_t after subtracting would go negative and bc it is unsigned would go to 1023)
-                    if (box_t < vs) begin
-                        box_t <= 0;
-                        down <= 1;  // Hit top, now go down
-                    end else begin
-                        box_t <= box_t - vs;  // SUBTRACT to move up
-                    end
-                end
-                end
-            HIT: begin
-                // Fall straight down
-                if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
-                    box_t <= SCREEN_HEIGHT - BOX_HEIGHT;
-                end else begin
-                    box_t <= box_t + 5;
-                end
-                box_l <= box_l;  // Stay in place horizontally
-                //maybe warble logic? sway left to right as it falls
+                    box_l <= box_l;  // Stay in place horizontally
+                    //maybe warble logic? sway left to right as it falls
 
-            end
-            LANDED: begin
-                if (landed_timer >= LANDED_DELAY) begin
-                    // Reset position for next round
-                    box_l <= 0;
-                    box_t <= 480;  // Start near top
-                    forward <= 1;
-                    down <= 1;
-                    //increase movement speed
-                    vs <= vs + 1;
-                    hs <= hs + 1;
                 end
-            end
+                LANDED: begin
+                    if (landed_timer >= LANDED_DELAY) begin
+                        // Reset position for next round
+                        box_l <= 0;
+                        box_t <= 480;  // Start near top
+                        forward <= 1;
+                        down <= 1;
+                        //increase movement speed
+                        vs <= vs + 1;
+                        hs <= hs + 1;
+                    end
+                end
             endcase
+        end
     end
     
 
@@ -188,7 +194,6 @@ module pattern_gen (
             default: next_state = state;
         endcase
 
-        // Output logic
         case(state)
             BLACK_SCREEN: color = 6'b000000;
             WHITE_SCREEN: begin
@@ -202,6 +207,7 @@ module pattern_gen (
                 else
                     color = b_color;
         endcase
+        
 
         if (valid)
             RGB = color;

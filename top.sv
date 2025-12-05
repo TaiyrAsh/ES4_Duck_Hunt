@@ -16,15 +16,19 @@ module top(
     logic screen_reset;
     logic valid;
 
-    always_ff @(posedge clk) begin
-        if(detect && trigger) debug <= 1;
-        else if(!reset) debug <= 0;
-    end
-
-
+    
 
     mypll mypll1(.clock_in(extern_clk), .clock_out(clk));
     vga myvga1(.clk(clk), .hsync(hsync), .vsync(vsync), .row_count(row_count), .col_count(col_count), .valid(valid), .reset(screen_reset));
-    pattern_gen mypg(.valid(valid), .screen_reset(screen_reset), .col(col_count), .row(row_count), .RGB(RGB), .trigger(trigger), .clk(clk), .detect(detect));
+    pattern_gen mypg(
+        .valid(valid), 
+        .screen_reset(screen_reset), 
+        .col(col_count), 
+        .row(row_count), 
+        .RGB(RGB), 
+        .trigger(trigger), 
+        .clk(clk), 
+        .detect(detect)
+    );
 
 endmodule
