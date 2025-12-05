@@ -26,50 +26,110 @@ module pattern_gen (
 
     // Update box_x on each screen_reset
 
-    typedef enum {FLYING, HIT, LANDED} state_d;
-    state_d state = FLYING;
-    state_d next_state;
+    // Timer for landed state
+    logic [7:0] landed_timer = 0;
+    localparam LANDED_DELAY = 60;
+
+    typedef enum {FLYING, HIT, LANDED} duck_state_t;
+    duck_state_t duck_state = FLYING;
+    duck_state_t duck_next_state;
+
+    always_comb begin
+        duck_next_state = duck_state;
+        case(duck_state)
+            FLYING: begin
+                if(detect && state == WHITE_SCREEN) begin
+                    duck_next_state = HIT;
+                end
+                end
+            HIT: begin
+                if(box_t >= SCREEN_HEIGHT - BOX_HEIGHT) begin
+                    duck_next_state = LANDED;
+                end
+                end
+            LANDED: begin
+                if(landed_timer >= LANDED_DELAY) begin
+                    duck_next_state = FLYING;
+                end
+            end
+        endcase
+    end
+
+        // State register and timer
 
 
     always_ff @(posedge screen_reset) begin
-//horizontal mvmnt
-        if (forward) begin
-            //checking box_l to hs to see next posistion before moving
-            if (box_l + hs >= SCREEN_WIDTH - BOX_WIDTH) begin
-                box_l <= SCREEN_WIDTH - BOX_WIDTH;
-                forward <= 0;
-            end else begin
-                box_l <= box_l + hs;
-            end
+        // Update state
+        duck_state <= duck_next_state;
+    
+    // Timer logic - check what state we're GOING to
+        if (duck_next_state == LANDED) begin
+            landed_timer <= landed_timer + 1;
         end else begin
-            //to prevent wraparound so it doesnt go off screen
-            if (box_l < hs) begin
-                box_l <= 0;
-                forward <= 1;
-            end else begin
-                box_l <= box_l - hs;  // SUBTRACT when moving backward
-            end
+            landed_timer <= 0;
         end
+        case(duck_state)
+            FLYING: begin
+                if (forward) begin
+                //checking box_l to hs to see next posistion before moving
+                    if (box_l + hs >= SCREEN_WIDTH - BOX_WIDTH) begin
+                    box_l <= SCREEN_WIDTH - BOX_WIDTH;
+                        forward <= 0;
+                    end else begin
+                        box_l <= box_l + hs;
+                    end
+                end else begin
+            //to prevent wraparound so it doesnt go off screen
+                    if (box_l < hs) begin
+                        box_l <= 0;
+                        forward <= 1;
+                    end else begin
+                        box_l <= box_l - hs;  // SUBTRACT when moving backward
+                    end
+                end
 // Vertical movement
-        if (down) begin
+                if (down) begin
          // MOVE DOWN (subtract)
          //checking box_t + vs to see next position so it dont go off screen
-            if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
-                box_t <= SCREEN_HEIGHT - BOX_HEIGHT; //set box to the top of screen 
-                down <= 0;  //go down
-            end else begin
-                box_t <= box_t + vs;  // add to move down so you start going down
-            end
-        end else begin
+                    if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
+                        box_t <= SCREEN_HEIGHT - BOX_HEIGHT; //set box to the top of screen 
+                        down <= 0;  //go down
+                    end else begin
+                        box_t <= box_t + vs;  // add to move down so you start going down
+                    end
+                end else begin
             //comparing top to vs is so there's no wraparound (box_t after subtracting would go negative and bc it is unsigned would go to 1023)
-            if (box_t < vs) begin
-                box_t <= 0;
-                down <= 1;  // Hit top, now go down
-            end else begin
-                box_t <= box_t - vs;  // SUBTRACT to move up
+                    if (box_t < vs) begin
+                        box_t <= 0;
+                        down <= 1;  // Hit top, now go down
+                    end else begin
+                        box_t <= box_t - vs;  // SUBTRACT to move up
+                    end
+                end
+                end
+            HIT: begin
+                // Fall straight down
+                if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
+                    box_t <= SCREEN_HEIGHT - BOX_HEIGHT;
+                end else begin
+                    box_t <= box_t + vs;
+                end
+                box_l <= box_l;  // Stay in place horizontally
             end
-        end
+            LANDED: begin
+                if (landed_timer >= LANDED_DELAY) begin
+                    // Reset position for next round
+                    box_l <= 0;
+                    box_t <= 480;  // Start near top
+                    forward <= 1;
+                    down <= 1;
+                end
+            end
+            endcase
     end
+    
+
+
     // Calculate box boundaries using box_x
     logic [9:0] box_l = 0;
     logic [9:0] box_r;
@@ -93,13 +153,13 @@ module pattern_gen (
         .rgb(b_color)
     );
 
-    // typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
-    // state_t state = IDLE;
-    // state_t next_state;
+    typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
+    state_t state = IDLE;
+    state_t next_state;
 
-    // always_ff @(posedge screen_reset) begin
-    //     state <= next_state;
-    // end
+    always_ff @(posedge screen_reset) begin
+        state <= next_state;
+    end
 
     always_comb begin
         // Default next_state to current state to prevent latches
