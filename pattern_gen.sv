@@ -193,9 +193,18 @@ module pattern_gen (
         .rgb(duck_sprite),
         .addr(next_address)
     );
+    pin_sprites_gen pingen(
+        .rst(screen_reset),
+        .hcount(col),
+        .vcount(row),
+        .clk(clk),
+        .rgb(pin_sprite),
+        .addr(next_address)
+    );
     logic [12:0] next_address;
     logic [1:0] sprite_index = 0;
-
+    logic bird_type = 0;
+    logic [5:0] pin_sprite;
     logic [5:0] duck_sprite;
 
     typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
@@ -254,11 +263,21 @@ module pattern_gen (
                     next_address = ((row - box_t) * 150) + (49- (col - box_l)) +(sprite_index_reg*50);
 
                     end
+                    if(bird_type) begin
                     if(duck_sprite != 6'b110011) begin
                     color = duck_sprite;
                     end
                     else begin
                         color = b_color;
+                    end
+                    end
+                    else begin
+                        if(pin_sprite != 6'b110011) begin
+                    color = pin_sprite;
+                    end
+                    else begin
+                        color = b_color;
+                    end
                     end
                     end
                 else begin
