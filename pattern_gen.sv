@@ -12,12 +12,15 @@ module pattern_gen (
     //main game state (start, in game, end)
     typedef enum {START, IN_GAME, GAME_OVER} game_state_t;
     game_state_t game_state = START;
+    logic [2:0] hit_counter = 0;
+    logic [5:0] frame_counter = 0;
+    logic [1:0] sprite_index_reg = 0;
 
     logic [5:0] color;
     logic [5:0] b_color;
 //vertical and horizontal speed of duck
-    logic [5:0] vs = 2;
-    logic [5:0] hs = 5;
+    logic [5:0] vs = 3;
+    logic [5:0] hs = 3;
 //forward and down bits to control direction for duck "bouncing"
     logic forward = 1;
     logic down = 1;
@@ -30,7 +33,7 @@ module pattern_gen (
 
     // Timer for landed state to reset
     logic [7:0] landed_timer = 0;
-    localparam LANDED_DELAY = 60;
+    localparam LANDED_DELAY = 120;
     // States for Duck State Machine
     typedef enum {FLYING, HIT, LANDED} duck_state_t;
     //initialize state
@@ -53,7 +56,6 @@ module pattern_gen (
             LANDED: begin
                 if(landed_timer >= LANDED_DELAY) begin
                     duck_next_state = FLYING;
-
                 end
             end
         endcase
@@ -65,12 +67,34 @@ module pattern_gen (
     always_ff @(posedge screen_reset) begin
         // Update state
         duck_state <= duck_next_state;
-    
+        if(hit_counter == 0) begin
+            vs <= 3;
+            hs <= 3;
+            end
+        if (duck_state == HIT && duck_next_state == LANDED) begin
+            hit_counter <= hit_counter + 1;
+        end
+        if (duck_state != (HIT || LANDED)) begin
+        if(frame_counter >= 15) begin
+                sprite_index_reg = 1;
+            end
+            else begin
+                sprite_index_reg = 0;
+            end
+        if (frame_counter >= 29) begin
+            frame_counter <= 0;
+            end else begin
+            frame_counter <= frame_counter + 1;
+        end
     // Timer logic for duck reset
         if (duck_next_state == LANDED) begin
             landed_timer <= landed_timer + 1;
         end else begin
             landed_timer <= 0;
+        end
+        end
+        else begin
+            sprite_index_reg = 2;
         end
         if(state == IDLE || state == HELD) begin
             case(duck_state)
@@ -117,7 +141,7 @@ module pattern_gen (
                     if (box_t + vs >= SCREEN_HEIGHT - BOX_HEIGHT) begin
                         box_t <= SCREEN_HEIGHT - BOX_HEIGHT;
                     end else begin
-                        box_t <= box_t + 5;
+                        box_t <= box_t + 2;
                     end
                     box_l <= box_l;  // Stay in place horizontally
                     //maybe warble logic? sway left to right as it falls
@@ -126,8 +150,6 @@ module pattern_gen (
                 LANDED: begin
                     if (landed_timer >= LANDED_DELAY) begin
                         // Reset position for next round
-                        box_l <= 0;
-                        box_t <= 480;  // Start near top
                         forward <= 1;
                         down <= 1;
                         //increase movement speed
@@ -163,6 +185,18 @@ module pattern_gen (
         .clk(clk),
         .rgb(b_color)
     );
+    duck_sprites_gen duckgen(
+        .rst(screen_reset),
+        .hcount(col),
+        .vcount(row),
+        .clk(clk),
+        .rgb(duck_sprite),
+        .addr(next_address)
+    );
+    logic [12:0] next_address;
+    logic [1:0] sprite_index = 0;
+
+    logic [5:0] duck_sprite;
 
     typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
     state_t state = IDLE;
@@ -175,8 +209,11 @@ module pattern_gen (
     always_comb begin
         // Default next_state to current state to prevent latches
         next_state = state;
-
+        color = 6'b000000;
+        sprite_index = 0;
+        next_address = 0;
         case (state)
+
             IDLE: begin
                 if (trigger)
                     next_state = BLACK_SCREEN;
@@ -191,21 +228,43 @@ module pattern_gen (
             end
             BLACK_SCREEN: next_state = WHITE_SCREEN;
             WHITE_SCREEN: next_state = HELD;
-            default: next_state = state;
+            default begin
+                next_state = state;
+                sprite_index = 0;
+            end
         endcase
 
         case(state)
-            BLACK_SCREEN: color = 6'b000000;
+            BLACK_SCREEN: begin
+                color = 6'b000000;
+                next_address = 0;
+            end
             WHITE_SCREEN: begin
                 if (in_box)
                     color = 6'b111111;
                 else
                     color = 6'b000000;
+                    next_address = 0;
             end
-            default: if (in_box)
-                    color = 6'b110000;
-                else
+            default: if (in_box) begin
+                    if (forward) begin
+                    next_address = ((row - box_t) * 150) + (col - box_l) +(sprite_index_reg*50);
+                    end
+                    else begin
+                    next_address = ((row - box_t) * 150) + (49- (col - box_l)) +(sprite_index_reg*50);
+
+                    end
+                    if(duck_sprite != 6'b110011) begin
+                    color = duck_sprite;
+                    end
+                    else begin
+                        color = b_color;
+                    end
+                    end
+                else begin
                     color = b_color;
+                    next_address = 0;
+                end
         endcase
         
 
@@ -214,5 +273,7 @@ module pattern_gen (
         else
             RGB = 6'd0;
     end
+
+
 
 endmodule

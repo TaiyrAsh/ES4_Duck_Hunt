@@ -8,6 +8,5 @@ set_io RGB[3] 32 // green
 set_io RGB[0] 27 // blue
 set_io RGB[1] 26 // blue
 set_io -pullup yes trigger 45 
-set_io debug 4
 set_io -pullup yes detect 2
 set_io reset 28

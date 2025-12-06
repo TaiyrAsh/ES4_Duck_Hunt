@@ -7,7 +7,6 @@ module top(
     output logic hsync,
     output logic vsync,
     output logic [5:0] RGB,
-    output logic debug
 );
 
     logic clk;
