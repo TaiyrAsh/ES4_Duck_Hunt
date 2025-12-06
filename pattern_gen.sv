@@ -6,6 +6,7 @@ module pattern_gen (
     input logic clk,
     input logic screen_reset,
     input logic detect,
+    input logic [3:0] score,
 
     output logic [5:0] RGB
 );
@@ -15,7 +16,7 @@ module pattern_gen (
     logic [2:0] hit_counter = 0;
     logic [5:0] frame_counter = 0;
     logic [1:0] sprite_index_reg = 0;
-
+    
     logic [5:0] color;
     logic [5:0] b_color;
 //vertical and horizontal speed of duck
@@ -30,6 +31,10 @@ module pattern_gen (
     localparam BOX_HEIGHT = 50;
     localparam SCREEN_WIDTH  = 640;
     localparam SCREEN_HEIGHT = 480;
+    localparam SCORE_W = 6;
+    localparam SCORE_H = 10;
+    localparam SCORE_W_OFFSET = 25;
+    localparam SCORE_H_OFFSET = 455;
 
     // Timer for landed state to reset
     logic [7:0] landed_timer = 0;
@@ -73,6 +78,7 @@ module pattern_gen (
             end
         if (duck_state == HIT && duck_next_state == LANDED) begin
             hit_counter <= hit_counter + 1;
+            score <= score + 1;
             bird_type <= ~bird_type;
 
         end
@@ -180,6 +186,10 @@ module pattern_gen (
     assign in_box = (col >= box_l) && (col < box_r) &&
                     (row >= box_t) && (row < box_b);
 
+    logic in_num;
+    assign in_num = (col > SCORE_W_OFFSET) && (col <= (SCORE_W + SCORE_W_OFFSET)) &&
+                   (row >= SCORE_H_OFFSET) && (row < (SCORE_H + SCORE_H_OFFSET));
+
     sprites_gen spgen(
         .rst(screen_reset),
         .hcount(col),
@@ -193,7 +203,7 @@ module pattern_gen (
         .vcount(row),
         .clk(clk),
         .rgb(duck_sprite),
-        .addr(next_address)
+        .addr(next_ds_address)
     );
     pin_sprites_gen pingen(
         .rst(screen_reset),
@@ -201,13 +211,23 @@ module pattern_gen (
         .vcount(row),
         .clk(clk),
         .rgb(pin_sprite),
-        .addr(next_address)
+        .addr(next_ds_address)
     );
-    logic [12:0] next_address;
+    number_sprites_gen numbgen(
+        .rst(screen_reset),
+        .hcount(col),
+        .vcount(row),
+        .clk(clk),
+        .rgb(score_sprite),
+        .addr(next_s_address)
+    );
+    logic [12:0] next_ds_address;
+    logic [9:0] next_s_address;
     logic [1:0] sprite_index = 0;
     logic bird_type = 0;
     logic [5:0] pin_sprite;
     logic [5:0] duck_sprite;
+    logic [5:0] score_sprite;
 
     typedef enum {IDLE, BLACK_SCREEN, WHITE_SCREEN, HELD} state_t;
     state_t state = IDLE;
@@ -222,7 +242,8 @@ module pattern_gen (
         next_state = state;
         color = 6'b000000;
         sprite_index = 0;
-        next_address = 0;
+        next_ds_address = 0;
+        next_s_address = 0;
         case (state)
 
             IDLE: begin
@@ -248,43 +269,56 @@ module pattern_gen (
         case(state)
             BLACK_SCREEN: begin
                 color = 6'b000000;
-                next_address = 0;
+                next_ds_address = 0;
+                next_s_address = 0;
             end
             WHITE_SCREEN: begin
                 if (in_box)
                     color = 6'b111111;
                 else
                     color = 6'b000000;
-                    next_address = 0;
+                    next_ds_address = 0;
+                    next_s_address = 0;
             end
-            default: if (in_box) begin
+            default: 
+                if (in_box) begin
                     if (forward) begin
-                    next_address = ((row - box_t) * 150) + (col - box_l) +(sprite_index_reg*50);
+                        next_ds_address = ((row - box_t) * 150) + (col - box_l) + (sprite_index_reg * 50);
                     end
                     else begin
-                    next_address = ((row - box_t) * 150) + (49- (col - box_l)) +(sprite_index_reg*50);
+                        next_ds_address = ((row - box_t) * 150) + (49- (col - box_l)) + (sprite_index_reg * 50);
+                    end
 
-                    end
                     if(bird_type) begin
-                    if(duck_sprite != 6'b110011) begin
-                    color = duck_sprite;
-                    end
-                    else begin
-                        color = b_color;
-                    end
+                        if(duck_sprite != 6'b110011) begin
+                            color = duck_sprite;
+                        end
+                        else begin
+                            color = b_color;
+                        end
                     end
                     else begin
                         if(pin_sprite != 6'b110011) begin
-                    color = pin_sprite;
+                            color = pin_sprite;
+                        end
+                        else begin
+                            color = b_color;
+                        end
+                    end
+                end
+                else if (in_num) begin
+                    next_s_address = ((row - SCORE_H_OFFSET) * 60) + (col - SCORE_W_OFFSET) + (score * 6);
+                    if(score_sprite != 6'b110011) begin
+                        color = score_sprite;
                     end
                     else begin
                         color = b_color;
                     end
-                    end
-                    end
+                end
                 else begin
                     color = b_color;
-                    next_address = 0;
+                    next_ds_address = 0;
+                    next_s_address = 0;
                 end
         endcase
         

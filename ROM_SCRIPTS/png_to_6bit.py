@@ -1,7 +1,7 @@
 from PIL import Image
  
-IMAGE = "pin-sprite.png"
-OUTPUT = "6_Bit_Pin_Output.png"
+IMAGE = "numbers.png"
+OUTPUT = "6_Bit_numbers_Output.png"
  
 img = Image.open(IMAGE).convert("RGB")
  

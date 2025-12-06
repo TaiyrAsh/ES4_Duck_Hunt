@@ -1,33 +1,25 @@
 from PIL import Image
  
-img = Image.open("6_Bit_Pin_Output.png").convert("RGB")
+img = Image.open("6_Bit_numbers_Output.png").convert("RGB")
  
 PALETTE_MAP = {
-(192,   0, 192): 0,  # (11, 00, 11)
-    (128, 128, 128): 1,  # (10, 10, 10)
-    (128,  64,   0): 2,  # (10, 01, 00)
-    (192,   0,   0): 3,  # (11, 00, 00)
-    (  0,   0,   0): 4,  # (00, 00, 00)
-    (192, 192, 192): 5,  # (11, 11, 11)
-    (128,   0,   0): 6,  # (10, 00, 00)
-    ( 64,  64,  64): 7,  # (01, 01, 01)
-    (192, 128,   0): 8,  # (11, 10, 00)
-    (192, 128,   0): 9,  # (11, 10, 00)
+    (192,   0, 192): 0,  # (11, 00, 11)
+    (  0,   0,   0): 1,  # (00, 00, 00)
 }
 
 
 
 # w,h = img.size
  
-w = 150
-h = 50
+w = 60
+h = 10
 print(img.size)
 print()
  
  
 # print(f"Image size: {img.size}")
  
-out = open("pin_sprite.taiyr", "w")
+out = open("numbers_sprite.samuel", "w")
 
 
 

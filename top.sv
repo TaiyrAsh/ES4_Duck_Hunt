@@ -14,6 +14,7 @@ module top(
     logic [9:0] col_count;
     logic screen_reset;
     logic valid;
+    logic [3:0] score;
 
     
 
@@ -27,7 +28,8 @@ module top(
         .RGB(RGB), 
         .trigger(trigger), 
         .clk(clk), 
-        .detect(detect)
+        .detect(detect),
+        .score(score)
     );
 
 endmodule
