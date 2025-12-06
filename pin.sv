@@ -3,7 +3,6 @@
 //     input  logic [9:0] pixel_addr,
 //     output logic [3:0] rgbmap
 // );
-
 //     logic [3:0] mem [0:7499];
 
 //     // // Hardcode a checkerboard pattern
