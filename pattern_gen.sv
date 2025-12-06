@@ -73,6 +73,8 @@ module pattern_gen (
             end
         if (duck_state == HIT && duck_next_state == LANDED) begin
             hit_counter <= hit_counter + 1;
+            bird_type <= ~bird_type;
+
         end
         if (duck_state != (HIT || LANDED)) begin
         if(frame_counter >= 15) begin
