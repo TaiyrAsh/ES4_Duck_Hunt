@@ -6,19 +6,20 @@ module pattern_gen (
     input logic clk,
     input logic screen_reset,
     input logic detect,
-    input logic [3:0] score,
-
     output logic [5:0] RGB
 );
+    logic [3:0] score;
     //main game state (start, in game, end)
-    typedef enum {START, IN_GAME, GAME_OVER} game_state_t;
+    typedef enum {START, IN_GAME, IN_HELD} game_state_t;
     game_state_t game_state = START;
+    game_state_t next_game_state;
     logic [2:0] hit_counter = 0;
-    logic [5:0] frame_counter = 0;
+    logic [7:0] frame_counter = 0;
     logic [1:0] sprite_index_reg = 0;
-    
+    logic [2:0] bullet_count;
     logic [5:0] color;
     logic [5:0] b_color;
+    logic [5:0] t_color;
 //vertical and horizontal speed of duck
     logic [5:0] vs = 3;
     logic [5:0] hs = 3;
@@ -65,13 +66,20 @@ module pattern_gen (
             end
         endcase
     end
-
         // State register and timer
-
 
     always_ff @(posedge screen_reset) begin
         // Update state
         duck_state <= duck_next_state;
+        if (state == BLACK_SCREEN && next_state == WHITE_SCREEN && !detect) begin
+            bullet_count <= bullet_count - 1;
+        end
+        
+        // Reset bullets on game start
+        if (game_state == START && next_game_state == IN_GAME) begin
+            bullet_count <= 7;
+            score <= 0;
+        end
         if(hit_counter == 0) begin
             vs <= 3;
             hs <= 3;
@@ -79,27 +87,24 @@ module pattern_gen (
         if (duck_state == HIT && duck_next_state == LANDED) begin
             hit_counter <= hit_counter + 1;
             score <= score + 1;
-            bird_type <= ~bird_type;
-
         end
         if (duck_state != (HIT || LANDED)) begin
-        if(frame_counter >= 15) begin
+            if(frame_counter[4]) begin
                 sprite_index_reg = 1;
             end
             else begin
                 sprite_index_reg = 0;
             end
-        if (frame_counter >= 29) begin
-            frame_counter <= 0;
-            end else begin
             frame_counter <= frame_counter + 1;
-        end
-    // Timer logic for duck reset
-        if (duck_next_state == LANDED) begin
-            landed_timer <= landed_timer + 1;
-        end else begin
-            landed_timer <= 0;
-        end
+            // Timer logic for duck reset
+            if (frame_counter == 67 || frame_counter == 4) begin
+                forward <= !forward;
+            end
+            if (duck_next_state == LANDED) begin
+                landed_timer <= landed_timer + 1;
+            end else begin
+                landed_timer <= 0;
+            end
         end
         else begin
             sprite_index_reg = 2;
@@ -186,9 +191,15 @@ module pattern_gen (
     assign in_box = (col >= box_l) && (col < box_r) &&
                     (row >= box_t) && (row < box_b);
 
+// For actual pixel drawing (normal boundaries)
     logic in_num;
-    assign in_num = (col > SCORE_W_OFFSET) && (col <= (SCORE_W + SCORE_W_OFFSET)) &&
-                   (row >= SCORE_H_OFFSET) && (row < (SCORE_H + SCORE_H_OFFSET));
+    assign in_num = (col >= SCORE_W_OFFSET) && (col < (SCORE_W + SCORE_W_OFFSET)) && 
+                (row >= SCORE_H_OFFSET) && (row < (SCORE_H + SCORE_H_OFFSET));
+
+// For address prefetch (1 pixel ahead)
+    logic in_num_prefetch;
+    assign in_num_prefetch = (col >= SCORE_W_OFFSET - 1) && (col < (SCORE_W + SCORE_W_OFFSET - 1)) && 
+                         (row >= SCORE_H_OFFSET) && (row < (SCORE_H + SCORE_H_OFFSET));
 
     sprites_gen spgen(
         .rst(screen_reset),
@@ -197,20 +208,19 @@ module pattern_gen (
         .clk(clk),
         .rgb(b_color)
     );
+    title_gen titlegen(
+        .rst(screen_reset),
+        .hcount(col),
+        .vcount(row),
+        .clk(clk),
+        .rgb(t_color)
+    );
     duck_sprites_gen duckgen(
         .rst(screen_reset),
         .hcount(col),
         .vcount(row),
         .clk(clk),
         .rgb(duck_sprite),
-        .addr(next_ds_address)
-    );
-    pin_sprites_gen pingen(
-        .rst(screen_reset),
-        .hcount(col),
-        .vcount(row),
-        .clk(clk),
-        .rgb(pin_sprite),
         .addr(next_ds_address)
     );
     number_sprites_gen numbgen(
@@ -224,8 +234,6 @@ module pattern_gen (
     logic [12:0] next_ds_address;
     logic [9:0] next_s_address;
     logic [1:0] sprite_index = 0;
-    logic bird_type = 0;
-    logic [5:0] pin_sprite;
     logic [5:0] duck_sprite;
     logic [5:0] score_sprite;
 
@@ -235,6 +243,7 @@ module pattern_gen (
 
     always_ff @(posedge screen_reset) begin
         state <= next_state;
+        game_state <= next_game_state;
     end
 
     always_comb begin
@@ -244,27 +253,49 @@ module pattern_gen (
         sprite_index = 0;
         next_ds_address = 0;
         next_s_address = 0;
-        case (state)
-
-            IDLE: begin
-                if (trigger)
-                    next_state = BLACK_SCREEN;
+        next_game_state = game_state;
+        case(game_state) 
+            START: begin
+                if(trigger)
+                    next_game_state = IN_GAME;
+            end
+            IN_GAME: begin
+                if(bullet_count == 0)
+                    next_game_state = IN_HELD;
+            end
+            IN_HELD: begin
+                if(trigger)
+                    next_game_state = game_state;
                 else
-                    next_state = state;
+                    next_game_state = START;
             end
-            HELD: begin
-                if (trigger)
-                    next_state = state;
-                else
-                    next_state = IDLE;
-            end
-            BLACK_SCREEN: next_state = WHITE_SCREEN;
-            WHITE_SCREEN: next_state = HELD;
-            default begin
-                next_state = state;
-                sprite_index = 0;
-            end
+            default: 
+                next_game_state = game_state;
         endcase
+
+        //trigger stuff for in game
+        if(game_state == IN_GAME) begin
+            case (state)
+                IDLE: begin
+                    if (trigger)
+                        next_state = BLACK_SCREEN;
+                    else
+                        next_state = state;
+                end
+                HELD: begin
+                    if (trigger)
+                        next_state = state;
+                    else
+                        next_state = IDLE;
+                end
+                BLACK_SCREEN: next_state = WHITE_SCREEN;
+                WHITE_SCREEN: next_state = HELD;
+                default begin
+                    next_state = state;
+                    sprite_index = 0;
+                end
+            endcase
+        end
 
         case(state)
             BLACK_SCREEN: begin
@@ -273,54 +304,50 @@ module pattern_gen (
                 next_s_address = 0;
             end
             WHITE_SCREEN: begin
-                if (in_box)
-                    color = 6'b111111;
-                else
-                    color = 6'b000000;
-                    next_ds_address = 0;
-                    next_s_address = 0;
-            end
+            if (in_box)
+                color = 6'b111111;
+            else
+                color = 6'b000000;
+                next_ds_address = 0;  // These two lines always execute!
+                next_s_address = 0;
+        end
             default: 
-                if (in_box) begin
-                    if (forward) begin
-                        next_ds_address = ((row - box_t) * 150) + (col - box_l) + (sprite_index_reg * 50);
-                    end
-                    else begin
-                        next_ds_address = ((row - box_t) * 150) + (49- (col - box_l)) + (sprite_index_reg * 50);
-                    end
+                if (game_state == IN_GAME) begin
+                    if (in_box) begin
+                        if (forward) begin
+                            next_ds_address = ((row - box_t) * 150) + (col - box_l) + (sprite_index_reg * 50);
+                        end
+                        else begin
+                            next_ds_address = ((row - box_t) * 150) + (49- (col - box_l)) + (sprite_index_reg * 50);
+                        end
 
-                    if(bird_type) begin
                         if(duck_sprite != 6'b110011) begin
                             color = duck_sprite;
                         end
                         else begin
                             color = b_color;
                         end
+                        
                     end
-                    else begin
-                        if(pin_sprite != 6'b110011) begin
-                            color = pin_sprite;
+                    else if (in_num) begin
+                        next_s_address = ((row - SCORE_H_OFFSET) * 60) + (col - SCORE_W_OFFSET) + (score * 6);
+                        if(score_sprite != 6'b110011) begin
+                            color = score_sprite;
                         end
                         else begin
                             color = b_color;
                         end
                     end
-                end
-                else if (in_num) begin
-                    next_s_address = ((row - SCORE_H_OFFSET) * 60) + (col - SCORE_W_OFFSET) + (score * 6);
-                    if(score_sprite != 6'b110011) begin
-                        color = score_sprite;
-                    end
                     else begin
                         color = b_color;
+                        next_ds_address = 0;
+                        next_s_address = 0;
                     end
-                end
-                else begin
-                    color = b_color;
-                    next_ds_address = 0;
-                    next_s_address = 0;
+                end else begin
+                    color = t_color;
                 end
         endcase
+        
         
 
         if (valid)

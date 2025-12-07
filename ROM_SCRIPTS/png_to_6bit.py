@@ -1,7 +1,7 @@
 from PIL import Image
  
-IMAGE = "numbers.png"
-OUTPUT = "6_Bit_numbers_Output.png"
+IMAGE = "titleCard.png"
+OUTPUT = "6BIT_Title_Output.png"
  
 img = Image.open(IMAGE).convert("RGB")
  
