@@ -75,11 +75,16 @@ module pattern_gen (
             bullet_count <= bullet_count - 1;
         end
         
-        // Reset bullets on game start
+        // RESET WHOLE GAME
         if (game_state == START && next_game_state == IN_GAME) begin
             bullet_count <= 7;
             score <= 0;
+            hit_counter <= 0;
+            duck_state <= LANDED;
+            box_t <= 440;
+            box_l <= 0;
         end
+
         if(hit_counter == 0) begin
             vs <= 3;
             hs <= 3;
@@ -87,6 +92,7 @@ module pattern_gen (
         if (duck_state == HIT && duck_next_state == LANDED) begin
             hit_counter <= hit_counter + 1;
             score <= score + 1;
+            bullet_count <= bullet_count + 1;
         end
         if (duck_state != (HIT || LANDED)) begin
             if(frame_counter[4]) begin
@@ -179,7 +185,7 @@ module pattern_gen (
     // Calculate box boundaries using box_x
     logic [9:0] box_l = 0;
     logic [9:0] box_r;
-    logic [9:0] box_t = 430;
+    logic [9:0] box_t = 440;
     logic [9:0] box_b;
     
    
